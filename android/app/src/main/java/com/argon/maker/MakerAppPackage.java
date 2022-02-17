@@ -1,4 +1,4 @@
-package com.maker.makerapp;
+package com.argon.maker;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
