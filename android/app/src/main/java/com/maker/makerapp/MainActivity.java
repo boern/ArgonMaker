@@ -1,4 +1,4 @@
-package com.argon.maker;
+package com.maker.makerapp;
 import expo.modules.ReactActivityDelegateWrapper;
 import com.facebook.react.ReactActivityDelegate;
 
@@ -22,7 +22,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "ArgonMaker";
+    return "MakerApp";
   }
 
   @Override

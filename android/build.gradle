@@ -9,21 +9,12 @@ buildscript {
         ndkVersion = "21.4.7075529"
     }
     repositories {
-        // 阿里云镜像
-        maven { url 'https://maven.aliyun.com/repository/public' }//jcenter
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }//gradle-plugin
-        maven { url 'https://maven.aliyun.com/repository/central' }//central
-        maven { url 'https://maven.aliyun.com/repository/google' }//google
-        maven { url 'https://www.jitpack.io' }
-
+        google()
         mavenCentral()
-        // google()
-        // jcenter()
+        jcenter()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:4.2.2")
-        // classpath("com.android.tools.build:gradle:4.2.0")
-        // classpath("com.android.tools.build:gradle:3.1.4")
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -31,16 +22,8 @@ buildscript {
 
 allprojects {
     repositories {
-
-        // 阿里云镜像
-        maven { url 'https://maven.aliyun.com/repository/public' }//jcenter
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }//gradle-plugin
-        maven { url 'https://maven.aliyun.com/repository/central' }//central
-        maven { url 'https://maven.aliyun.com/repository/google' }//google
-
         mavenCentral()
         mavenLocal()
-        maven { url 'https://www.jitpack.io' }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url(new File(["node", "--print", "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim(), "../android"))
@@ -50,9 +33,9 @@ allprojects {
             url(new File(["node", "--print", "require.resolve('jsc-android/package.json')"].execute(null, rootDir).text.trim(), "../dist"))
         }
 
-        // google()
+        google()
         mavenCentral()
-        // jcenter()
+        jcenter()
         maven { url 'https://www.jitpack.io' }
 
          maven {

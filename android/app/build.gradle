@@ -1,12 +1,5 @@
 buildscript {
     repositories {
-        // 阿里云镜像
-        maven { url 'https://maven.aliyun.com/repository/public' }//jcenter
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }//gradle-plugin
-        maven { url 'https://maven.aliyun.com/repository/central' }//central
-        maven { url 'https://maven.aliyun.com/repository/google' }//google
-        maven { url 'https://www.jitpack.io' }
-
         maven { url 'https://plugins.gradle.org/m2/' } // Gradle Plugin Portal
     }
     dependencies {
@@ -114,7 +107,7 @@ apply from: "../../node_modules/react-native/react.gradle"
  * the correct one based on the CPU architecture of their device.
  */
 def enableSeparateBuildPerCPUArchitecture = false
-// def enableSeparateBuildPerCPUArchitecture = true
+
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
@@ -173,7 +166,6 @@ def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitect
 android {
     ndkVersion rootProject.ext.ndkVersion
     compileSdkVersion rootProject.ext.compileSdkVersion
-    // compileSdkVersion = 30
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -181,12 +173,24 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.argon.maker"
+        applicationId "com.maker.makerapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode getVersionCode()
         versionName getNpmVersion()
     }
+
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
     splits {
         abi {
             reset()
@@ -205,6 +209,7 @@ android {
             }
         }
         release {
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }

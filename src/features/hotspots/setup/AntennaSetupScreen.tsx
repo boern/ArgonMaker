@@ -13,7 +13,8 @@ import Text from '../../../components/Text'
 import { DebouncedButton } from '../../../components/Button'
 import HotspotConfigurationPicker from '../../../components/HotspotConfigurationPicker'
 import { MakerAntenna } from '../../../makers/antennaMakerTypes'
-import Example from '../../../makers/example'
+// import Example from '../../../makers/example'
+import argon from '../../../makers/argon'
 import { HotspotMakerModels } from '../../../makers'
 import { RootNavigationProp } from '../../../navigation/main/tabTypes'
 
@@ -36,7 +37,7 @@ const AntennaSetupScreen = () => {
       isUS && makerAntenna?.us ? makerAntenna.us : makerAntenna?.default
 
     if (!ant)
-      return isUS ? Example.antennas.EXAMPLE_US : Example.antennas.EXAMPLE_US
+      return isUS ? argon.antennas.EXAMPLE_US : argon.antennas.EXAMPLE_US
 
     return ant
   }, [params.hotspotType])

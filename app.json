@@ -1,6 +1,6 @@
 {
-  "name": "ArgonMaker",
-  "displayName": "Maker App",
+  "name": "MakerApp",
+  "displayName": "Argon Maker",
   "expo": {
     "scheme": "makerappscheme"
   }
