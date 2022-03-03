@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ArgonMaker.app"
-               BlueprintName = "ArgonMaker"
-               ReferencedContainer = "container:ArgonMaker.xcodeproj">
+               BuildableName = "MakerApp.app"
+               BlueprintName = "MakerApp"
+               ReferencedContainer = "container:MakerApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ArgonMakerTests.xctest"
-               BlueprintName = "ArgonMakerTests"
-               ReferencedContainer = "container:ArgonMaker.xcodeproj">
+               BuildableName = "MakerAppTests.xctest"
+               BlueprintName = "MakerAppTests"
+               ReferencedContainer = "container:MakerApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ArgonMaker.app"
-            BlueprintName = "ArgonMaker"
-            ReferencedContainer = "container:ArgonMaker.xcodeproj">
+            BuildableName = "MakerApp.app"
+            BlueprintName = "MakerApp"
+            ReferencedContainer = "container:MakerApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ArgonMaker.app"
-            BlueprintName = "ArgonMaker"
-            ReferencedContainer = "container:ArgonMaker.xcodeproj">
+            BuildableName = "MakerApp.app"
+            BlueprintName = "MakerApp"
+            ReferencedContainer = "container:MakerApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
