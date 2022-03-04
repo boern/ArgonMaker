@@ -21,6 +21,7 @@ import {
   HotspotBleProvider,
   OnboardingProvider,
 } from '@helium/react-native-sdk'
+import CodePush from 'react-native-code-push'
 import { theme, darkThemeColors, lightThemeColors } from './theme/theme'
 import NavigationRoot from './navigation/NavigationRoot'
 import { useAppDispatch } from './store/store'
@@ -148,4 +149,4 @@ const App = () => {
   )
 }
 
-export default App
+export default CodePush(App)

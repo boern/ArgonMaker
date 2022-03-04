@@ -97,6 +97,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -136,28 +137,6 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false)
 
 /**
- * Used to increment the version code for Microsoft App Center builds
- */
-def getVersionCode = { ->
-    def isAppCenter = System.getenv('APPCENTER_BUILD_ID') != null
-    if (isAppCenter) {
-        try {
-            def appcenterBuildId = Integer.parseInt(System.getenv('APPCENTER_BUILD_ID'))
-            def versionCodeOffset = Integer.parseInt(System.getenv('VERSION_CODE_OFFSET'))
-            return versionCodeOffset + appcenterBuildId
-        } catch (ignored) {}
-    }
-    return 4400000 // default higher for local builds - app center is 4300000 + build number
-}
-
-def getNpmVersion() {
-    def inputFile = file("$rootDir/../package.json")
-    def jsonPackage = new JsonSlurper().parseText(inputFile.text)
-
-    return jsonPackage["version"]
-}
-
-/**
 	 * Architectures to build native code for in debug.
 	 */
 def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitectures")
@@ -173,11 +152,12 @@ android {
     }
 
     defaultConfig {
+        resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
         applicationId "com.maker.makerapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode getVersionCode()
-        versionName getNpmVersion()
+        versionCode 5
+        versionName "1.0.5"
     }
 
     signingConfigs {
